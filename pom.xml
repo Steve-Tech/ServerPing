@@ -41,6 +41,12 @@
             <artifactId>mcserverping</artifactId>
             <version>1.0.0</version>
             <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 
@@ -63,7 +69,11 @@
                     <relocations>
                         <relocation>
                             <pattern>br.com.azalim</pattern>
-                            <shadedPattern>me.stevetech.serverping.libraries.mcserverping</shadedPattern>
+                            <shadedPattern>me.stevetech.serverping.libraries</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.xbill</pattern>
+                            <shadedPattern>me.stevetech.serverping.libraries</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>
